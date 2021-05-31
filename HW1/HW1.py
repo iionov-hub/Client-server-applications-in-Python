@@ -63,3 +63,14 @@ for v_text in v_texts:
         v_texts_i.append(v_text)
 # print(f'Невозможно записать в байтовом типе слова: {", ".join(v_texts_i)}')
 print(f'Невозможно записать в байтовом типе слова: {v_texts_i}')
+
+
+
+# 4 Преобразовать слова «разработка», «администрирование», «protocol», «standard»
+# из строкового представления в байтовое и выполнить обратное преобразование
+# (используя методы encode и decode).
+
+for v_text in ['разработка', 'администрирование', 'protocol', 'standard']:
+    a = v_text.encode('utf-8')
+    b = a.decode('utf-8', 'replace')
+    print(a, b, v_text)
