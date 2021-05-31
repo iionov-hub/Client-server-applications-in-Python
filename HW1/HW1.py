@@ -74,3 +74,15 @@ for v_text in ['разработка', 'администрирование', 'pr
     a = v_text.encode('utf-8')
     b = a.decode('utf-8', 'replace')
     print(a, b, v_text)
+
+
+# 5 Выполнить пинг веб-ресурсов yandex.ru, youtube.com и преобразовать результаты
+# из байтовового в строковый тип на кириллице.
+
+import subprocess
+
+for ping in ['yandex.ru', 'youtube.com']:
+    v_text = ['ping', ping]
+    ya_you_ping = subprocess.Popen(v_text, stdout=subprocess.PIPE)
+    for line in ya_you_ping.stdout:
+        print(line.decode('CP1125').encode('utf-8').decode('utf-8'))
