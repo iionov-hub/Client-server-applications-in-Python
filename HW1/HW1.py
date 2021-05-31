@@ -32,3 +32,23 @@ print(type(v_text))
 v_text = '\u0434\u0435\u043a\u043e\u0440\u0430\u0442\u043e\u0440'
 print(v_text)
 print(type(v_text))
+
+
+
+# 2. Каждое из слов «class», «function», «method» записать
+# в байтовом типе без преобразования в последовательность кодов
+# (не используя методы encode и decode) и определить тип,
+# содержимое и длину соответствующих переменных.
+
+v_text = 'class'
+v_text = bytes(v_text, encoding = 'utf-8')
+print(v_text, type(v_text), len(v_text))
+
+v_text = 'function'
+v_text = bytes(v_text, encoding = 'utf-8')
+print(v_text, type(v_text), len(v_text))
+
+v_text = 'method'
+v_text = bytes(v_text, encoding = 'utf-8')
+print(v_text, type(v_text), len(v_text))
+
