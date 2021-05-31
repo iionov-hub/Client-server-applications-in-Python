@@ -86,3 +86,17 @@ for ping in ['yandex.ru', 'youtube.com']:
     ya_you_ping = subprocess.Popen(v_text, stdout=subprocess.PIPE)
     for line in ya_you_ping.stdout:
         print(line.decode('CP1125').encode('utf-8').decode('utf-8'))
+
+
+# 6 Создать текстовый файл test_file.txt, заполнить его тремя строками:
+# «сетевое программирование», «сокет», «декоратор». Проверить кодировку файла по умолчанию.
+# Принудительно открыть файл в формате Unicode и вывести его содержимое
+
+v_text = open('test_file.txt', 'w', encoding='utf-8')
+v_text.write('сетевое программирование сокет декоратор')
+v_text.close()
+print(type(v_text))
+
+with open('test_file.txt', encoding='utf-8') as v_text:
+    for v_texts in v_text:
+        print(v_texts, end="")
