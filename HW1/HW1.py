@@ -52,3 +52,14 @@ v_text = 'method'
 v_text = bytes(v_text, encoding = 'utf-8')
 print(v_text, type(v_text), len(v_text))
 
+# 3 Определить, какие из слов «attribute», «класс», «функция», «type» невозможно записать в байтовом типе.
+
+v_texts = ['attribute', 'класс', 'функция', 'type']
+v_texts_i = []
+for v_text in v_texts:
+    byte = v_text.encode()
+    print(v_text,byte)
+    if '\\' in str(byte):
+        v_texts_i.append(v_text)
+# print(f'Невозможно записать в байтовом типе слова: {", ".join(v_texts_i)}')
+print(f'Невозможно записать в байтовом типе слова: {v_texts_i}')
