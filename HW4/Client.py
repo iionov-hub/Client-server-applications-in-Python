@@ -21,18 +21,19 @@ def presence(s):
             "status": "connect"
         }
     }
-    print('1',s)
+
     send_message(s, msg_presence) # переходим в фукнцию и отправляем сообщение с параметрами
 
-    data = get_data_from_message(s.recv(1000000))
-    print('Сообщение от сервера: ', data)
+    response = get_data_from_message(s.recv(1000000))
+    print('Сообщение от сервера: ', response)
+    return response
 
 
 def main():
     s = socket(AF_INET, SOCK_STREAM) # sockect - Создаём сокет TCP
     s.connect(('localhost', 7777)) # .connect -  Устанавливаем соедение с сервером
 
-    presence(s) # переходим в функцию для отправки presence-сообщениz
+    response = presence(s) # переходим в функцию для отправки presence-сообщениz
 
     s.close() # .close - Закрыть соединение
 
